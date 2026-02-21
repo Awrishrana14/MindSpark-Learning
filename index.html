@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fun Test Learning</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #e6f2ff;
+      text-align: center;
+      padding: 30px;
+    }
+    .box {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      width: 300px;
+      margin: auto;
+      box-shadow: 0 0 10px gray;
+    }
+    button {
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🎮 Fun Test Learning</h1>
+<p>Learn chapters with games!</p>
+
+<div class="box">
+  <h3>Quick Quiz</h3>
+  <p>Sun rises from?</p>
+
+  <button onclick="check('A')">A) East</button><br><br>
+  <button onclick="check('B')">B) West</button>
+
+  <p id="result"></p>
+</div>
+
+<script>
+function check(ans) {
+  if(ans === 'A') {
+    document.getElementById("result").innerHTML = "✅ Correct!";
+  } else {
+    document.getElementById("result").innerHTML = "❌ Wrong!";
+  }
+}
+</script>
+
+</body>
+</html>
