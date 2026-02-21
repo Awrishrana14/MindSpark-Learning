@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MindSpark Learning</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #e6f2ff, #ffffff);
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  .container {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  .chapter {
+    background: white;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+  }
+
+  .chapter h2 {
+    margin-top: 0;
+    color: #007bff;
+  }
+
+  .chapter a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #007bff;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+
+  .chapter a:hover {
+    background: #0056b3;
+  }
+
+  .quiz-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+    margin-top: 20px;
+  }
+
+  .quiz-box button {
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+  }
+
+  .quiz-box button:hover {
+    background: #0056b3;
+  }
+
+  #result {
+    margin-top: 15px;
+    font-weight: bold;
+  }
+
+  .score {
+    margin-top: 10px;
+    color: green;
+    font-weight: bold;
+  }
+
+  footer {
+    text-align: center;
+    padding: 15px;
+    background: #007bff;
+    color: white;
+    margin-top: 30px;
+  }
+
+  @media(max-width:600px) {
+    .container {
+      padding: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>MindSpark Learning</h1>
+  <p>Learn chapters with fun, games & one-shot lectures!</p>
+</header>
+
+<div class="container">
+
+  <!-- Chapters Section -->
+  <div class="chapter">
+    <h2>Chapter 1: Transport in Plants</h2>
+    <p>Learn key concepts with short lecture & tricks for fast exam revision.</p>
+    <a href="#">Watch Lecture</a>
+  </div>
+
+  <div class="chapter">
+    <h2>Chapter 2: Acids, Bases & Salts</h2>
+    <p>Understand formulas, reactions, and exam-focused points in one short video.</p>
+    <a href="#">Watch Lecture</a>
+  </div>
+
+  <!-- Quiz Section -->
+  <div class="quiz-box">
+    <h2>Quick MCQ Quiz</h2>
+    <p id="question">Q1: Sun rises from?</p>
+    <button onclick="checkAnswer('A')">A) East</button><br>
+    <button onclick="checkAnswer('B')">B) West</button><br>
+    <button onclick="checkAnswer('C')">C) North</button><br>
+    <button onclick="checkAnswer('D')">D) South</button>
+    <p id="result"></p>
+    <p class="score">Score: <span id="score">0</span></p>
+  </div>
+
+</div>
+
+<footer>
+  &copy; 2026 MindSpark Learning. Learn smart, play smart, score smart!
+</footer>
+
+<script>
+let score = 0;
+
+function checkAnswer(answer) {
+  const correct = 'A'; // Correct answer
+  const result = document.getElementById('result');
+  const scoreEl = document.getElementById('score');
+
+  if(answer === correct) {
+    result.innerHTML = '✅ Correct!';
+    score += 1;
+  } else {
+    result.innerHTML = '❌ Wrong! Correct answer: East';
+  }
+  scoreEl.innerHTML = score;
+}
+</script>
+
+</body>
+</html>
