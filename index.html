@@ -1,166 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MindSpark Learning</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #e6f2ff, #ffffff);
-    margin: 0;
-    padding: 0;
-  }
-
-  header {
-    background-color: #007bff;
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-
-  h1 {
-    margin: 0;
-  }
-
-  .container {
-    padding: 20px;
-    max-width: 900px;
-    margin: auto;
-  }
-
-  .chapter {
-    background: white;
-    margin: 15px 0;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #ccc;
-  }
-
-  .chapter h2 {
-    margin-top: 0;
-    color: #007bff;
-  }
-
-  .chapter a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 12px;
-    background: #007bff;
-    color: white;
-    border-radius: 6px;
-    text-decoration: none;
-  }
-
-  .chapter a:hover {
-    background: #0056b3;
-  }
-
-  .quiz-box {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #ccc;
-    margin-top: 20px;
-  }
-
-  .quiz-box button {
-    padding: 10px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    background: #007bff;
-    color: white;
-  }
-
-  .quiz-box button:hover {
-    background: #0056b3;
-  }
-
-  #result {
-    margin-top: 15px;
-    font-weight: bold;
-  }
-
-  .score {
-    margin-top: 10px;
-    color: green;
-    font-weight: bold;
-  }
-
-  footer {
-    text-align: center;
-    padding: 15px;
-    background: #007bff;
-    color: white;
-    margin-top: 30px;
-  }
-
-  @media(max-width:600px) {
-    .container {
-      padding: 10px;
-    }
-  }
-</style>
-</head>
-<body>
-
-<header>
-  <h1>MindSpark Learning</h1>
-  <p>Learn chapters with fun, games & one-shot lectures!</p>
-</header>
-
-<div class="container">
-
-  <!-- Chapters Section -->
-  <div class="chapter">
-    <h2>Chapter 1: Transport in Plants</h2>
-    <p>Learn key concepts with short lecture & tricks for fast exam revision.</p>
-    <a href="#">Watch Lecture</a>
+<!-- ====== BIOLOGY: CHAPTER 1 - GASEOUS EXCHANGE ====== -->
+<div id="bio-ch-gaseous" class="content">
+  <button class="btn" onclick="backToChapters('bio')">← Back to Chapters</button>
+  <div class="mode-toggle">
+    <button onclick="setMode('english')">English</button>
+    <button onclick="setMode('urdu')">Urdu</button>
+    <button onclick="setMode('mix')">Mix</button>
   </div>
 
-  <div class="chapter">
-    <h2>Chapter 2: Acids, Bases & Salts</h2>
-    <p>Understand formulas, reactions, and exam-focused points in one short video.</p>
-    <a href="#">Watch Lecture</a>
+  <h2>Biology – Chapter: Gaseous Exchange</h2>
+
+  <!-- MCQs Section -->
+  <h3>MCQs (40)</h3>
+  <div id="bio-gaseous-mcq">
+    <div class="option" onclick="checkMCQ(this,true,'Q1')">Which organ is the main site of gaseous exchange?<span class="icon">✔</span></div>
+    <div class="option" onclick="checkMCQ(this,false,'Q1')">Heart<span class="icon">✖</span></div>
+    <div class="option" onclick="checkMCQ(this,false,'Q1')">Stomach<span class="icon">✖</span></div>
+    <div class="option" onclick="checkMCQ(this,false,'Q1')">Liver<span class="icon">✖</span></div>
+    <!-- Add remaining 39 MCQs similarly -->
   </div>
 
-  <!-- Quiz Section -->
-  <div class="quiz-box">
-    <h2>Quick MCQ Quiz</h2>
-    <p id="question">Q1: Sun rises from?</p>
-    <button onclick="checkAnswer('A')">A) East</button><br>
-    <button onclick="checkAnswer('B')">B) West</button><br>
-    <button onclick="checkAnswer('C')">C) North</button><br>
-    <button onclick="checkAnswer('D')">D) South</button>
-    <p id="result"></p>
-    <p class="score">Score: <span id="score">0</span></p>
+  <!-- Current Mistakes -->
+  <div class="mistakes">
+    <h4>Current Mistakes</h4>
+    <div id="bio-gaseous-mistakes"><p>No mistakes yet.</p></div>
   </div>
 
+  <!-- Short Questions -->
+  <h3>Short Questions (30+)</h3>
+  <div id="bio-gaseous-short">
+    <p>Q1: Define gaseous exchange.<br><b>Ans:</b> Process of exchanging oxygen and carbon dioxide between organism and environment.</p>
+    <p>Q2: Main organ of gaseous exchange in humans?<br><b>Ans:</b> Lungs</p>
+    <p>Q3: What is alveolus?<br><b>Ans:</b> Tiny air sac in lungs where oxygen and carbon dioxide exchange occurs.</p>
+    <!-- Add all 30+ short questions -->
+  </div>
+
+  <!-- Long Questions -->
+  <h3>Long Questions</h3>
+  <div id="bio-gaseous-long">
+    <p>Q1: Describe the mechanism of breathing in humans.<br>
+    <b>Ans:</b> Inhalation: diaphragm contracts → thoracic cavity volume increases → lungs expand → air enters. Exhalation: diaphragm relaxes → thoracic cavity volume decreases → lungs compress → air exits.</p>
+
+    <p>Q2: Explain the transport of oxygen and carbon dioxide in blood.<br>
+    <b>Ans:</b> Oxygen binds to haemoglobin and is transported to tissues. Carbon dioxide is transported as bicarbonate ions (~70%), dissolved CO₂ (~7%), carbamino compounds (~23%).</p>
+
+    <p>Q3: Compare gaseous exchange in plants and humans.<br>
+    <b>Ans:</b> Humans: alveoli, lungs; Plants: stomata, lenticels, root hairs. Humans: ventilation required; Plants: diffusion sufficient.</p>
+  </div>
+
+  <!-- Rapid Revision Chart -->
+  <h3>Rapid Revision Chart</h3>
+  <table border="1" cellpadding="5" style="border-collapse:collapse;">
+    <tr><th>Term</th><th>Function / Description</th></tr>
+    <tr><td>Lungs</td><td>Main organ of gaseous exchange</td></tr>
+    <tr><td>Alveoli</td><td>Site of O₂ & CO₂ exchange</td></tr>
+    <tr><td>Diaphragm</td><td>Muscle for inhalation/exhalation</td></tr>
+    <tr><td>Intercostal muscles</td><td>Assist chest movement</td></tr>
+    <tr><td>Haemoglobin</td><td>Transports oxygen</td></tr>
+    <tr><td>Bicarbonate ions</td><td>Transport CO₂ in blood</td></tr>
+    <tr><td>Cilia</td><td>Remove dust and pathogens</td></tr>
+    <tr><td>Mucus</td><td>Traps dust & microbes</td></tr>
+    <tr><td>Stomata</td><td>Plant gaseous exchange</td></tr>
+    <tr><td>Guard cells</td><td>Control stomatal opening</td></tr>
+  </table>
+
+  <!-- Lecture Video -->
+  <h3>Lecture Video</h3>
+  <div class="video-box">
+    <!-- Public YouTube video that works for embedding -->
+    <iframe src="https://www.youtube.com/embed/HQh2Jb2qC9A" allowfullscreen></iframe>
+  </div>
+
+  <!-- Game / Quiz Placeholders -->
+  <h3>Game Zone</h3>
+  <p>Rapid Fire Mode / Weak Zone: practice mistakes / MCQs quiz</p>
 </div>
-
-<footer>
-  &copy; 2026 MindSpark Learning. Learn smart, play smart, score smart!
-</footer>
-
-<script>
-let score = 0;
-
-function checkAnswer(answer) {
-  const correct = 'A'; // Correct answer
-  const result = document.getElementById('result');
-  const scoreEl = document.getElementById('score');
-
-  if(answer === correct) {
-    result.innerHTML = '✅ Correct!';
-    score += 1;
-  } else {
-    result.innerHTML = '❌ Wrong! Correct answer: East';
-  }
-  scoreEl.innerHTML = score;
-}
-</script>
-
-</body>
-</html>
